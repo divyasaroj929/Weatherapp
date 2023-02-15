@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f2ef;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  height: 100vh;
+  width: 100%;
+}
+
+.box {
+  height: 90vh;
+  width: 100%;
+
+  background-color: aqua;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 20px 30px 30px 30px;
+}
+
+.inputData {
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 7px;
+  gap: 0 10px;
+}
+
+.info-bottom {
+  padding-top: 80px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info .street {
+  font-size: 50px;
+  margin-right: 9px;
+}
+.street {
+  animation: rotates 3s linear infinite alternate;
+}
+@keyframes rotates {
+  from {
+    transform: translateX(-0.5rem);
+  }
+  to {
+    transform: translateX(0.5rem);
+  }
+}
+
+.info .location {
+  padding: 9px;
+  font-size: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-transform: capitalize;
+}
+
+.input-filed {
+  height: 35px;
+  width: 100%;
+
+  margin: auto;
+  border-radius: 10px;
+  outline: none;
+
+  padding: 10px, 10px;
+  border: none;
+
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.tempcrture {
+  padding-top: 30px;
+  font-size: 48px;
+  color: black;
+}
+
+.tempcrture-max {
+  padding: 10px;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: 160%;
+  left: 50%;
+
+  background-color: aliceblue;
+
+  width: 30rem;
+  height: 30rem;
+  margin-left: -15rem;
+  margin-top: -25rem;
+
+  transform-origin: 50% 45%;
+
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.wave .-three {
+  animation: drift 5000ms infinite linear;
+  z-index: 2 !important;
+
+  opacity: 0.2;
+}
+
+.wave .-two {
+  animation: drift 7000ms infinite linear;
+  z-index: 3 !important;
+  opacity: 0.1;
+}
+/* .box:after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+} */
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+/* @media (max-width: 600px) {
+  .box {
+    width: 90vw;
+    height: 80vh;
+  }
+
+  .wave {
+    top: 85%;
+  }
+
+  #weathercon {
+    font-size: 5em;
+  }
+
+  .info {
+    font-size: 1.5rem;
+  }
+}
+@media (max-height: 500px) {
+  .box {
+    height: 80vh;
+  }
+
+  .wave {
+    top: 115%;
+  }
+} */
