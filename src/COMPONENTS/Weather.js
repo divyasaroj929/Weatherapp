@@ -8,19 +8,29 @@ const Weather = () => {
 
   const timer = useRef();
   useEffect(() => {
-    const apiCall = async () => {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=fcf1ff081291ca0c2f0ebb5a035c8636`;
-      const responce = await fetch(url);
-      console.log(responce);
-      const resjson = await responce.json();
-      console.log(resjson);
-      if (timer) clearTimeout(timer.current);
-      timer.current = setTimeout(() => {
+    // const apiCall = async () => {
+    //   const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=fcf1ff081291ca0c2f0ebb5a035c8636`;
+    //   const responce = await fetch(url);
+    //   console.log(responce);
+    //   const resjson = await responce.json();
+    //   console.log(resjson);
+    if (timer) clearTimeout(timer.current);
+    timer.current = setTimeout(() => {
+      let apiCall = async () => {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=fcf1ff081291ca0c2f0ebb5a035c8636`;
+        const responce = await fetch(url);
+        console.log(responce);
+        const resjson = await responce.json();
+        console.log(resjson, "hjj");
         setCity(resjson.main);
-        console.log("call");
-      }, 1000);
-    };
-    apiCall();
+      };
+      // setCity(resjson.main);
+      apiCall();
+
+      console.log("call");
+    }, 4000);
+    // };
+    // apiCall();
   }, [search]);
   const buildDate = (d) => {
     let months = [
